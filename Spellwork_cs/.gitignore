@@ -1,0 +1,9 @@
+
+*.suo
+*.user
+SpellWork/obj/*
+*.orig
+*.rej
+*.patch
+*.log
+_ReSharper*

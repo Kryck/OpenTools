@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1DF3EF8B-5DAA-4CD0-9CC0-573D421ED63E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAI_Editor</RootNamespace>
+    <AssemblyName>SAI-Editor</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\packages\MySql.Data.6.7.4\lib\net40\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\packages\System.Data.SQLite.1.0.88.0\lib\net45\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq">
+      <HintPath>..\packages\System.Data.SQLite.1.0.88.0\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\CommentGenerator.cs" />
+    <Compile Include="Classes\SmartScriptListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\XConverter.cs" />
+    <Compile Include="Forms\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutForm.designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RevertQueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RevertQueryForm.Designer.cs">
+      <DependentUpon>RevertQueryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SearchForms\AreatriggersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SearchForms\AreatriggersForm.Designer.cs">
+      <DependentUpon>AreatriggersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Database\Classes\ActionTypeInformation.cs" />
+    <Compile Include="Classes\Database\Classes\AreaTrigger.cs" />
+    <Compile Include="Classes\Database\Classes\BaseTypeInformation.cs" />
+    <Compile Include="Classes\Database\Classes\EventTypeInformation.cs" />
+    <Compile Include="Classes\Database\Classes\SmartScript.cs" />
+    <Compile Include="Classes\Database\Classes\TargetTypeInformation.cs" />
+    <Compile Include="Classes\Database\Database.cs" />
+    <Compile Include="Classes\Database\SQLiteDatabase.cs" />
+    <Compile Include="Classes\Database\WorldDatabase.cs" />
+    <Compile Include="dep\ScrollablePicturebox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="dep\ScrollablePicturebox.Designer.cs">
+      <DependentUpon>ScrollablePicturebox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dep\ZoomPanImageBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\ListViewColumnSorter.cs" />
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SearchForms\MultiSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SearchForms\MultiSelectForm.designer.cs">
+      <DependentUpon>MultiSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SqlOutputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SqlOutputForm.Designer.cs">
+      <DependentUpon>SqlOutputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TestForm.Designer.cs" />
+    <Compile Include="Forms\XListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Enumerators\PublicEnums.cs" />
+    <Compile Include="Classes\SAI-Editor-Manager.cs" />
+    <Compile Include="Forms\SearchForms\SearchForEntryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SearchForms\SearchForEntryForm.designer.cs">
+      <DependentUpon>SearchForEntryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SearchForms\SearchForLinkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SearchForms\SearchForLinkForm.designer.cs">
+      <DependentUpon>SearchForLinkForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SearchForms\SearchFromDatabaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SearchForms\SearchFromDatabaseForm.Designer.cs">
+      <DependentUpon>SearchFromDatabaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SearchForms\SiingleSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SearchForms\SiingleSelectForm.Designer.cs">
+      <DependentUpon>SiingleSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\SecurityExtensions.cs" />
+    <Compile Include="Forms\SearchForms\SelectDatabaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SearchForms\SelectDatabaseForm.designer.cs">
+      <DependentUpon>SelectDatabaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SettingsForm.designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\TooltipHelper.cs" />
+    <Compile Include="Classes\XToolTip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="Forms\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RevertQueryForm.resx">
+      <DependentUpon>RevertQueryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SearchForms\AreatriggersForm.resx">
+      <DependentUpon>AreatriggersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dep\ZoomPanImageBox.resx">
+      <DependentUpon>ZoomPanImageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SearchForms\MultiSelectForm.resx">
+      <DependentUpon>MultiSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SqlOutputForm.resx">
+      <DependentUpon>SqlOutputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TestForm.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Forms\SearchForms\SearchForEntryForm.resx">
+      <DependentUpon>SearchForEntryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SearchForms\SearchForLinkForm.resx">
+      <DependentUpon>SearchForLinkForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SearchForms\SearchFromDatabaseForm.resx">
+      <DependentUpon>SearchFromDatabaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SearchForms\SelectDatabaseForm.resx">
+      <DependentUpon>SelectDatabaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SearchForms\SiingleSelectForm.resx">
+      <DependentUpon>SiingleSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\sqlite_database.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\1378477411_33795.ico" />
+    <Content Include="Resources\icon_add.ico" />
+    <Content Include="Resources\icon_add_2.ico" />
+    <Content Include="Resources\icon_error.ico" />
+    <Content Include="Resources\icon_info.ico" />
+    <Content Include="Resources\icon_load_script.png" />
+    <Content Include="Resources\icon_remove.ico" />
+    <Content Include="Resources\icon_warning.ico" />
+    <Content Include="Resources\icon_write.ico" />
+    <None Include="Resources\permanent_tooltip_icon.png" />
+    <Content Include="Resources\settings_icon.ico" />
+    <Content Include="x64\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
